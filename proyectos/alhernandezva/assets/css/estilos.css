@@ -1,0 +1,138 @@
+
+/* Importar fuente personalizada */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* Normalizar documento */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+/* Definición de CSS Variables */
+:root {
+    /* Variables de colores principales */
+    --c-primario: #E74C3C;
+    --c-secundario: #3498DB;
+    --c-terciario: #2980B9;
+    --c-claro: #ECF0F1;
+    --c-oscuro: #2C3E50;
+
+    /* Dimensión del iframe */
+    --iframe-width: 650px;
+    --iframe-height: 450px;
+}
+
+/* ==========> Layout de la aplicación con CSS Grid <========== */
+.contenedor {
+    background: var(--c-oscuro);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 50px;
+    overflow-x: hidden;
+}
+
+.header {
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    
+}
+
+.menu {
+    background: var(--c-terciario);
+    display: none;
+}
+
+.main {
+    background: var(--c-primario);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.footer {
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+/* ===================== */
+
+/* Estilos para el contenido principal */
+.main {
+    padding: 1em;
+}
+.main .instruccion {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+    background: var(--c-claro);
+}
+.main .instruccion p {
+    margin: 0; padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.main .contenedor-iframe {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    text-align: center;
+    overflow-x: auto;
+    background: var(--c-claro);
+}
+.main .contenedor-iframe iframe {
+    width: var(--iframe-width);
+    height: var(--iframe-height);
+}
+
+/* Estilos para la barra de navegación */
+.nav * {
+    color: var(--c-claro);
+}
+.nav .nav-links li {
+    text-align: center;
+    margin: 0 auto;
+    transition: background 0.5s;
+}
+.nav .nav-links li:hover {
+    background: var(--c-terciario);
+}
+.nav .nav-links li a {
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+}
+.nav .menu-open {
+    display: inline-block;
+    margin: 5px auto 5px 15px;
+}
+.nav {
+    position: relative;
+}
+.nav .nav-toggle {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+/* =======> Utilidades <======= */
+/* Normalizar listas y links */
+.lista-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.lista-links li a {
+    text-decoration: none;
+}
+
+/* Iconos grandes */
+.icono-grande {
+    font-size: 25px;
+    cursor: pointer;
+}
