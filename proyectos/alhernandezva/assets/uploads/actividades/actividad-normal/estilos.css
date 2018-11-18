@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0; max-width: 630px; max-height: 430px;
+}
+.contenedor {
+    position: relative;
+    width: 630px; max-width: 630px;
+    height: 430px; max-height: 430px;
+    font-family: sans-serif;
+    text-align: center;
+}
+#btn-continuar {
+	width: 106px;
+	background-color:#3d94f6;
+	-moz-border-radius:13px; -webkit-border-radius:13px; border-radius:13px;
+	border:1px solid #337fed;
+	cursor:pointer;
+	color:#ffffff;
+    font-size:17px;
+	padding:10px 15px;
+    text-decoration:none;
+    position: absolute;
+    left: 270px;
+    top: 380px;
+    display:none;
+}
+#btn-continuar:hover {
+	background-color:#1e62d0;
+}
+#btn-audio {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+}
+
+/* Estilizar actividad a partir de aquí */
+.btn-signo {
+    position:absolute;
+    width:50px;
+    height:50px;
+    font-size:40px;
+    background-color:#DDD;
+    color:#787878;
+    text-align:center;
+    vertical-align:middle;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border:2px solid #ccc;
+    cursor:pointer;
+}   
+.btn-signo:focus {
+    border-width:3px;
+    border-color:#62bda8;
+    outline-width:1px;
+    outline-color:#62bda8;
+}    
+.btn-signo:hover {
+    background-color:#EEE;
+}
+#btn-signo1 {
+    top: 100px;
+    left: 115px;
+}
+#btn-signo2 {
+    top: 170px;
+    left: 115px;
+}
+#btn-signo3 {
+    top: 240px;
+    left: 115px;
+}
+/* Quemar números a través de JS */
+.num {
+    position: absolute;
+    color: #787878;
+    font-size: 60px;
+}
+#numero1 {
+    top: 90px;
+    left: 315px;
+}
+#numero2 {
+    top: 160px;
+    left: 315px;
+}
+#resultado {
+    top: 250px;
+    left: 300px;
+}
+#signo {
+    width: 65px;
+    height: 80px;
+    top: 122px;
+    left: 245px;
+    text-align: center;
+    line-height: 80px;
+    vertical-align: middle;
+}
+.raya {
+    position: absolute;
+    top: 200px;
+    left: 275px;
+    color: #62bda8;
+    font-size: 40px;
+    font-weight: bold;
+}

@@ -94,6 +94,12 @@ body {
 .nav * {
     color: var(--c-claro);
 }
+.nav .nav-links {
+    display: none;
+}
+.nav .nav-links.mostrar {
+    display: block;
+}
 .nav .nav-links li {
     text-align: center;
     margin: 0 auto;
