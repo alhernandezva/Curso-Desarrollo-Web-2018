@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0; max-width: 630px; max-height: 430px;
+}
+.contenedor {
+    position: relative;
+    width: 630px; max-width: 630px;
+    height: 430px; max-height: 430px;
+    font-family: sans-serif;
+    text-align: center;
+}
+#btn-continuar {
+	width: 106px;
+	background-color:#3d94f6;
+	-moz-border-radius:13px; -webkit-border-radius:13px; border-radius:13px;
+	border:1px solid #337fed;
+	cursor:pointer;
+	color:#ffffff;
+    font-size:17px;
+	padding:10px 15px;
+    text-decoration:none;
+    position: absolute;
+    left: 270px;
+    top: 380px;
+    display:none;
+}
+#btn-continuar:hover {
+	background-color:#1e62d0;
+}
+#btn-audio {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+}

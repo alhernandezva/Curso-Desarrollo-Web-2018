@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Actividad Educativa</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Estructurar actividad aquí -->
+        <button type="button" class="btn-signo" id="btn-signo1" onclick="seleccionar(0)">+</button>
+		<button type="button" class="btn-signo" id="btn-signo2" onclick="seleccionar(1)">&minus;</button>
+		<button type="button" class="btn-signo" id="btn-signo3" onclick="seleccionar(2)">&times;</button>
+		<span class="num" id="numero1"></span>
+		<span class="num" id="numero2"></span>
+		<span class="raya">________</span>
+		<span class="num" id="resultado"></span>
+        <span class="num" id="signo">?</span>
+        
+        <button id="btn-continuar">Continuar</button>
+        <a href="#" id="btn-audio"><img src="botonAudio.png" alt="botón audio" height="30"></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
