@@ -1,21 +1,21 @@
 {
     "name": "gaia/repoactividades",
-    "type": "project",
+    "description": "Repositorio de Actividades Educativas",
+    "authors": [
+        {
+            "name": "alhernandezva",
+            "email": "alhernandezva@unal.edu.co"
+        }
+    ],
     "require": {
         "slim/slim": "^3.11",
         "slim/twig-view": "^2.4",
-        "php-di/slim-bridge": "^2.0",
-        "slim/csrf": "^0.8.3"
+        "slim/csrf": "^0.8.3",
+        "php-di/slim-bridge": "^2.0"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         }
-    },
-    "authors": [
-        {
-            "name": "Alejandro Hernandez Valencia",
-            "email": "alhernandezva@unal.edu.co"
-        }
-    ]
+    }
 }

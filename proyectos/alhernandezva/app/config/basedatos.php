@@ -2,10 +2,10 @@
 
 // Configuración de la Base de Datos
 return [
-    'host' => '',
-    'user' => '',
+    'host' => 'localhost',
+    'user' => 'root',
     'password' => '',
-    'db' => '',
+    'db' => 'repoactividades',
     'charset' => 'utf8',
     'opciones' => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

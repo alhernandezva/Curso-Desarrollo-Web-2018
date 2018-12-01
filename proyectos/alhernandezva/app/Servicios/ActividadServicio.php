@@ -11,14 +11,16 @@ use App\Utilidades\UtilidadesGenerales;
 
 class ActividadServicio {
     
+    private $categorias;
+    private $actividadRepo;
 
     /* Directorio donde se almacenan las actividades */
     protected static $DIR_ACTIVIDADES = 'actividades/';
 
     protected static $ARCHIVO_INICIO_ACTIVIDAD = 'index.html';
 
-    public function __construct() {
-        
+    public function __construct(ActividadRepo $actividadRepo) {
+        $this->actividadRepo = $actividadRepo;
     }
 
     //private function consultarCategorias
@@ -27,7 +29,16 @@ class ActividadServicio {
         return $this->categorias;
     }
 
-    //public function consultarActividades
+    public function consultarActividades() {
+        $consulta = $this->actividadRepo->consultarActividades();
+        $actividades = [];
+        foreach ($consulta as $actividad) {
+            $act = new Actividad($actividad);
+            array_push($actividades, $act);
+        }
+
+        return $actividades;
+    }
 
     /**
      * Inserta la información de la actividad en la BD y almacena sus archivos en disco.

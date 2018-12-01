@@ -9,6 +9,9 @@ btnMenuClose.addEventListener("click", ocultarMenuLateral);
 btnNavToggle.addEventListener("click", toggleNavLinks);
 window.addEventListener("resize", arreglarNavLinks);
 
+// Cargar enlaces de actividades con AJAX
+document.addEventListener("DOMContentLoaded", cargarDatos);
+
 function mostrarMenuLateral() {
     menuLateral.classList.add("mostrar");
 }
@@ -28,21 +31,32 @@ function arreglarNavLinks() {
 }
 
 function cargarDatos() {
-    var datos = [
-        {url: "//unal.edu.co", nombre: "UNAL", instruccion: "Instrucción UNAL"},
-        {url: "//gaia.manizales.unal.edu.co/GAIA/", nombre: "GAIA", instruccion: "Instrucción GAIA"},
-        {url: "assets/uploads/actividades/actividad-normal/index.html", nombre: "Determinar operación", instruccion: "Fijate en los números y selecciona la operación que da el resultado"},
-        {url: "assets/uploads/actividades/actividad-canvas/index.html", nombre: "Actividad Canvas", instruccion: "Instrucción canvas"},
-    ];
-    
-    return datos;
+    var url = menuLateral.dataset.url;
+    var datos = [];
+    axios.get(url)
+        .then(function(res) {
+            var actividades = res.data.actividades;
+            if (actividades.length > 0) {
+                actividades.forEach(function(actividad) {
+                    var obj = {
+                        url: actividad.rutaArchivo,
+                        nombre: actividad.nombre,
+                        instruccion: actividad.instruccion
+                    };
+                    datos.push(obj);
+                });
+            }
+        }).catch(function(err) {
+            console.log(err.response);
+        }).finally(function() {
+            generarLinks(datos);
+        });
 }
 
-function generarLinks() {
+function generarLinks(links) {
     var menuLinks = document.getElementById("menu-links");
     menuLinks.innerHTML = "";
 
-    var links = cargarDatos();
     if(links.length > 0) {
         for (var i = 0; i < links.length; i++) {
             var texto = document.createTextNode(links[i].nombre);
@@ -66,4 +80,7 @@ function generarLinks() {
     }
 }
 
-generarLinks();
+// Recibir puntaje desde la actividad
+function enviarPuntaje(puntaje) {
+    alert('Tu puntaje es: ' + puntaje * 100);
+}
