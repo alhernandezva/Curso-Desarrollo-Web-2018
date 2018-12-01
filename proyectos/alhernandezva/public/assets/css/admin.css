@@ -1,0 +1,209 @@
+/* ==========> Layout de la página con CSS Grid <========== */
+.contenedor {
+    background: var(--c-oscuro);
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    overflow-x: hidden;
+}
+
+.header {
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    
+}
+
+.main {
+    background: var(--c-oscuro);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.footer {
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+/* ===================== */
+
+/* Estilos para el header */
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-cargar-actividad {
+    height: 80%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.btn-cargar-actividad i {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+/* Estilos para el contenido principal */
+.main {
+    padding: 1em;
+}
+/* ============> Estilos Tabla Actividades <============ */
+.contenedor-tabla {
+    padding: 10px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+.tabla-vacia {
+    display: none;
+    text-align: center;
+}
+.tabla-vacia.mostrar {
+    margin-top: 20%;
+    display: block;
+}
+.tabla-actividades {
+    width: 100%;
+    background: var(--c-claro);
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+.tabla-actividades tr, .tabla-actividades th, .tabla-actividades td {
+    border: 1px solid black;
+}
+
+.tabla-actividades tr {
+    text-align: center;
+}
+.tabla-actividades tr:nth-child(even) {
+    background: #CCC;
+}
+
+.tabla-actividades th, .tabla-actividades td {
+    padding: 0.3em;
+}
+
+.tabla-actividades .btn-eliminar {
+    width: 1.5em;
+    font-size: 1.5em;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* ==========> Responsive Design: Estilos para dispositivos de Escritorio <========== */
+@media screen and (min-width: 900px) {
+    .contenedor-tabla {
+        width: 80%;
+    }
+}
+
+/* ============> Estilos Modal Cargar Actividad <============ */
+.modal-overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.modal-overlay.mostrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    max-height: 90%;
+    padding: 0.5em;
+    overflow-y: auto;
+    background: #333;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.controles {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.controles li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.controles > li:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.controles li label {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.controles > li > label {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.controles > li > label + * {
+    flex: 1 0 220px;
+}
+
+.controles li input,
+.controles li textarea {
+    padding: 10px;
+    border: none;
+}
+
+.controles li textarea {
+    resize: none;
+}
+
+.controles .botones {
+    justify-content: center;
+}
+
+.controles li button {
+    margin-left: 20px;
+    padding: 8px 16px;
+    border: none;
+    background: lightseagreen;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 5px;
+}
+
+/* Estilos para campos que poseen errores */
+.controles > li .info {
+    display: none;
+}
+.controles > li.error {
+    position: relative;
+    border: 2px solid tomato;
+}
+.controles > li.error .info {
+    display: inline;
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.6em;
+    color: tomato;
+}
