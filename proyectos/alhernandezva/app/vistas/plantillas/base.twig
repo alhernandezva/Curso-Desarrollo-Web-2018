@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block titulo %}Repositorio de Actividades Educativas{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ constant('APP_URL') }}assets/ext/feathericon/css/feathericon.min.css">
+        <link rel="stylesheet" href="{{ constant('APP_URL') }}assets/css/general.css">
+    {% endblock %}
+</head>
+<body>
+    {% block contenido %}
+        <h1>Repositorio de Actividades Educativas</h1>
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ constant('APP_URL') }}assets/js/general.js"></script>
+    {% endblock %}
+</body>
+</html>

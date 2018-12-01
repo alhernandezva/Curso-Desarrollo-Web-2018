@@ -1,0 +1,60 @@
+/* Importar fuente personalizada */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* Normalizar documento */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+/* Definición de CSS Variables */
+:root {
+    /* Variables de colores principales */
+    --c-primario: #E74C3C;
+    --c-secundario: #3498DB;
+    --c-terciario: #2980B9;
+    --c-claro: #ECF0F1;
+    --c-oscuro: #2C3E50;
+}
+
+/* ==========> Utilidades <========== */
+/* Normalizar listas y links */
+.lista-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.lista-links li a {
+    text-decoration: none;
+}
+
+/* Iconos grandes */
+.icono-grande {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Estilos generales de botones */
+.btn {
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn.rojo {
+    color: white;
+    background: red;
+}
+.btn.rojo:hover {
+    background: rgb(211, 0, 0);
+}
+.btn.verde {
+    font-weight: bold;
+    color: white;
+    background: rgb(66, 173, 66);
+}
+.btn.verde:hover {
+    background: rgb(35, 153, 35);
+}

@@ -1,0 +1,86 @@
+{% extends 'plantillas/base.twig' %}
+
+{% block titulo %}Administración del Repositorio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- Link CSS -->
+{% endblock %}
+
+{% block contenido %}
+    <div class="contenedor">
+        <header class="header">
+            <button class="btn verde btn-cargar-actividad" id="btn-abrir-modal">
+                <i class="fe fe-upload"></i><span>Cargar actividad</span>
+            </button>
+        </header>
+        <main class="main">
+            <div class="contenedor-tabla">
+                <table class="tabla-actividades" id="tabla-actividades">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nombre</th>
+                            <th>Instrucción</th>
+                            <th>Descripción</th>
+                            <th>Categoria</th>
+                            <th>Ruta</th>
+                            <th>¿Eliminar?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- For Loop -->
+                    </tbody>
+                </table>
+                <h2 class="tabla-vacia">El repositorio aún no posee actividades, sube una!</h2>
+            </div>
+
+            <!-- Modal cargar actividad -->
+            <div class="modal-overlay" id="modal-cargar-actividad">
+                <div class="modal-contenido">
+                    <form id="form-cargar-actividad">
+                        <ul class="controles">
+                            <li>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" placeholder="Ingresa el nombre de la actividad">
+                                <span class="info"></span>
+                            </li>
+                            <li>
+                                <label for="instruccion">Instrucción</label>
+                                <input type="text" name="instruccion" id="instruccion" placeholder="Ingresa la instrucción que verá el usuario">
+                                <span class="info"></span>
+                            </li>
+                            <li>
+                                <label for="descripcion">Descripción</label>
+                                <textarea rows="5" name="descripcion" id="descripcion" placeholder="Describe de forma breve la actividad"></textarea>
+                                <span class="info"></span>
+                            </li>
+                            <li>
+                                <label for="categoria">Categoría</label>
+                                <select name="categoria" id="categoria">
+                                    <!-- Categorias -->
+                                </select>
+                                <span class="info"></span>
+                            </li>
+                            <li>
+                                <label for="archivo">Archivo ZIP</label>
+                                <input type="file" name="archivo" id="archivo">
+                                <span class="info"></span>
+                            </li>
+                            <li class="botones">
+                                <button type="button" class="btn" id="btn-cerrar-modal">Cerrar</button>
+                                <button type="submit" class="btn">Cargar</button>
+                            </li>
+                        </ul>
+                        <!-- campos CSRF -->
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- include footer -->
+{% endblock %}
+
+{% block javascripts %}
+    <!-- parent JS  y propio -->
+{% endblock %}

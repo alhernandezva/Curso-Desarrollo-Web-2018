@@ -1,0 +1,58 @@
+.contenedor {
+    width: 100vw; height: 100vh;
+    max-width: 100vw; max-height: 100vh;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+
+    color: var(--c-claro);
+    background: var(--c-secundario);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.banner {
+    width: 90%;
+    text-align: center;
+    border: 1px solid yellow;
+}
+
+.banner .titulo {
+    margin-bottom: 1em;
+}
+
+.banner .link {
+    display: inline-block;
+    height: 3em;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1em;
+    font-weight: bold;
+    color: white;
+}
+.banner .link .link-aplicacion {
+
+}
+.banner .link .link-admin {
+    
+}
+
+.footer {
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
